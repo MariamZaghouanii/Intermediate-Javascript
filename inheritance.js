@@ -1,3 +1,5 @@
+/* Parent class */
+
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -21,6 +23,8 @@ class HospitalEmployee {
   }
 }
 
+/* Child class */
+
 class Nurse extends HospitalEmployee {
   constructor(name, certifications) {
     super(name);
@@ -35,6 +39,20 @@ class Nurse extends HospitalEmployee {
     this.certifications.push(newCertification);
   }
 }
+
+/* Child class */
+
+class Doctor extends HospitalEmployee {
+  constructor (name, insurance) {
+    super(name);
+    this._insurance = insurance;
+  }
+
+  get insurance() {
+    return this._insurance;
+  }
+}
+
 
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
 nurseOlynyk.takeVacationDays(5);
