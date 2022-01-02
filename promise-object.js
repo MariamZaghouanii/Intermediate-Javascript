@@ -14,6 +14,4 @@ const inventory = {
   
   const orderSunglasses = new Promise(myExecutor)
   
-  const orderPromise = orderSunglasses;
-  
-  console.log(orderPromise);
+  console.log(orderSunglasses);
