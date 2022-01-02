@@ -4,14 +4,19 @@ const inventory = {
     bags: 1344
   };
   
-  function myExecutor(resolve, reject) {
-    if (inventory.sunglasses > 0){
-      resolve('Sunglasses order processed.')
-    } else {
-      reject('That item is sold out.')
-    }
-  } 
-  
-  const orderSunglasses = new Promise(myExecutor)
-  
-  console.log(orderSunglasses);
+
+const checkInventory = (order) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let inStock = order.every(item => inventory[item[0]] >= item[1]);
+      if (inStock) {
+        resolve(`Thank you. Your order was successful.`);
+      } else {
+        reject(`We're sorry. Your order could not be completed because some items are sold out.`);
+      }
+    }, 1000);
+  })
+};
+
+
+module.exports = { checkInventory };
