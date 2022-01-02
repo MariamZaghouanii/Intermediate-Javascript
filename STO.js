@@ -1,9 +1,7 @@
 console.log("first line of code"); /* 1 */
 
-function usingSTO(){
-    console.log("cc"); 
-}
-
-setTimeout(usingSTO, 2000) /* 3 */
+setTimeout(() => {
+    console.log("cc"); /* 3 */
+}, 2000) 
 
 console.log("last line of code"); /* 2 */
